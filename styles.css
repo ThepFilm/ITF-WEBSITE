@@ -1,0 +1,23 @@
+nav {
+    background-color: brown;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+}
+
+.bankname {
+    margin: 1rem 0rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.bankname img {
+    height: 100px;
+    width: 100px;
+    margin-right: 3rem;
+}
