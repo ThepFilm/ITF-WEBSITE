@@ -1,43 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pessi Penalty Bank - Argentina Theme</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-    <nav>
-        <p>68070016</p>
-        <h2>ITF Website</h2>
-        <p>Week 14</p>
-    </nav>
-    <div class="bankname">
-        <img src="Messi.png" alt="">
-        <h2>Pessi Penalty Bank</h2>
-    </div>
+  <header class="banner">
+    <h1>Pessi Penalty Bank</h1>
+    <p>Pessi Fan</p>
+  </header>
 
-    <div class="account">
-        <h3>Account Overview</h3>
-        <div class="account-sec">
-            <img src="messi 2.png" alt="">
-            <h4>Account Information</h4>
-            <p>Name: Leonel Pessi</p>
-            <p>Type: Savings Account</p>
-        </div>
-    </div>
+  <nav class="navbar">
+    <span class="student-id">68070016</span>
+    <button>I</button>
+    <button>T</button>
+    <button>F</button>
+  </nav>
 
-    <div class="balance">
-        <h3>Account Overview</h3>
-        <div class="balance-sec">
-            <img src="" alt="">
-            <h4>Balance Information</h4>
-            <p>Name: Leonel Pessi</p>
-            <p>Type: Savings Account</p>
+  <main class="dashboard">
+    <section class="panel account-overview">
+      <h2>Account Overview</h2>
+
+      <div class="overview-item">
+        <img src="Messi.png" alt="user" class="overview-icon">
+        <div class="overview-text">
+          <h3>Account Information</h3>
+          <p>Name: Leonel Pessi</p>
+          <p>Type: Savings Account</p>
         </div>
-    </div>
-    Enter number: <input type="number" id="myinput" value="0">
-    <button onclick="add()">+1</button>
-    <script src="script.js"></script>
+      </div>
+
+      <div class="overview-item">
+        <img src="messi 2.png" alt="balance" class="overview-icon">
+        <div class="overview-text">
+          <h3>Balance Information</h3>
+          <div class="overview-balance editable">
+            <p>Current account:<br><span class="balance-label">balance</span></p>
+            <input type="number" id="acct-input" value="1000">
+          </div>
+          <div class="overview-balance editable">
+            <p>Current cash:<br><span class="balance-label">balance</span></p>
+            <input type="number" id="cash-input" value="1000">
+          </div>
+          <button class="btn-secondary" onclick="updateBalance()">Change</button>
+        </div>
+      </div>
+
+      <div class="overview-item">
+        <img src="pessi bag.png" alt="operation" class="overview-icon">
+        <div class="overview-text">
+          <h3>Bank Operation</h3>
+          <div class="action-box">
+            <select id="trans-type">
+              <option value="in">Deposit</option>
+              <option value="out">Withdraw</option>
+            </select>
+            <input type="number" id="trans-amt" placeholder="Amount">
+            <button class="btn-secondary" onclick="processTrans()">Proceed</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="overview-item">
+        <img src="money pessi.png" alt="converter" class="overview-icon">
+        <div class="overview-text">
+          <h3>Currency Converter (Coming Soon)</h3>
+          <div class="converter-box">
+            <input type="number" placeholder="Amount" disabled>
+            <div class="converter-selects">
+              <select disabled>
+                <option>THB</option>
+                <option>USD</option>
+                <option>EUR</option>
+              </select>
+              <span>➡️</span>
+              <select disabled>
+                <option>USD</option>
+                <option>THB</option>
+                <option>EUR</option>
+              </select>
+            </div>
+            <button class="btn-secondary" disabled>Convert</button>
+          </div>
+          <p class="converter-note">* This feature is under development.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel log-area">
+      <h3>Activity Log</h3>
+      <textarea id="log-box" readonly>1) Account: 1000 | Cash: 1000</textarea>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
